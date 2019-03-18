@@ -8,7 +8,7 @@ export class CoreService {
     private loaderStatus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(private router: Router) {
-        this.router.events.subscribe((event: Event) => {
+        this.router.events.subscribe(event => {
             if (event instanceof NavigationStart || event instanceof ActivationEnd) {
                 this.setLoader(true);
             }

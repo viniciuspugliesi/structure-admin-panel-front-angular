@@ -12,7 +12,6 @@ import {PricePipe} from './pipes/price/price.pipe';
 import {PreventDefaultDirective} from './directives/prevent-default/prevent-default.directive';
 import {ArrayHelper} from './helpers/array-helper';
 import {APIInterceptor, HTTPStatus} from './http/interceptors/api-interceptor';
-import {ErrorHandlerService} from './services/error-handler/error-handler.service';
 import {NumberHelper} from './helpers/number-helper';
 import {DateTimeHelper} from './helpers/date-time-helper';
 import {MoneyHelper} from './helpers/money-helper';
@@ -50,7 +49,6 @@ import {MoneyHelper} from './helpers/money-helper';
         ArrayHelper,
         ModalService,
         DateTimeHelper,
-        ErrorHandlerService,
     ]
 })
 export class SharedModule {
