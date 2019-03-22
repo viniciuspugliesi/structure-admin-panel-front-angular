@@ -8,9 +8,6 @@ import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
     imports: [
         FormsModule,
         BrowserModule,
@@ -18,6 +15,9 @@ import {CoreModule} from './core/core.module';
         AppRoutingModule,
         SharedModule,
         CoreModule,
+    ],
+    declarations: [
+        AppComponent
     ],
     providers: [],
     bootstrap: [

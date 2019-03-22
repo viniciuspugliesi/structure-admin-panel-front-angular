@@ -1,4 +1,4 @@
-import { Inject } from "@angular/core";
+import {Inject} from '@angular/core';
 
 declare let require: any;
 let dateFormat = require('dateformat');

@@ -15,6 +15,8 @@ import {APIInterceptor, HTTPStatus} from './http/interceptors/api-interceptor';
 import {NumberHelper} from './helpers/number-helper';
 import {DateTimeHelper} from './helpers/date-time-helper';
 import {MoneyHelper} from './helpers/money-helper';
+import {RedirectIfAuthenticatedGuard} from './guards/redirect-if-authenticated/redirect-if-authenticated.guard';
+import {RedirectIfNotAuthenticatedGuard} from './guards/redirect-if-not-authenticated/redirect-if-not-authenticated.guard';
 
 @NgModule({
     imports: [
@@ -49,6 +51,8 @@ import {MoneyHelper} from './helpers/money-helper';
         ArrayHelper,
         ModalService,
         DateTimeHelper,
+        RedirectIfAuthenticatedGuard,
+        RedirectIfNotAuthenticatedGuard,
     ]
 })
 export class SharedModule {

@@ -1,8 +1,8 @@
-import { ParseDatePipe } from './parse-date.pipe';
+import {ParseDatePipe} from './parse-date.pipe';
 
 describe('ParseDatePipe', () => {
-	it('create an instance', () => {
-		const pipe = new ParseDatePipe();
-		expect(pipe).toBeTruthy();
-	});
+    it('create an instance', () => {
+        const pipe = new ParseDatePipe();
+        expect(pipe).toBeTruthy();
+    });
 });

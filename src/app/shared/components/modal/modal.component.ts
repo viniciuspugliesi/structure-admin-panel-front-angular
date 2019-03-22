@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, OnInit, OnDestroy} from '@angular/core';
-import { ModalService } from './modal.service';
+import {Component, ElementRef, Input, OnDestroy, OnInit} from '@angular/core';
+import {ModalService} from './modal.service';
 
 declare let $: any;
 
@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         let modal = this;
 
-        if (! this.id) {
+        if (!this.id) {
             console.error('modal must have an id');
             return;
         }

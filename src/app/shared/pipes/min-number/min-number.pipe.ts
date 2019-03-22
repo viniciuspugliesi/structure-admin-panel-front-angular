@@ -1,11 +1,11 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-	name: 'minNumber'
+    name: 'minNumber'
 })
 export class MinNumberPipe implements PipeTransform {
 
-	transform(value: number, min: number): number {
-		return (value < min) ? min : value;
-	}
+    transform(value: number, min: number): number {
+        return (value < min) ? min : value;
+    }
 }

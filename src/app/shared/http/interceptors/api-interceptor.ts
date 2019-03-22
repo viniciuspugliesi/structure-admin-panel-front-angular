@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { catchError, finalize, map } from 'rxjs/operators';
-import { environment } from '../../../../environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {catchError, finalize, map} from 'rxjs/operators';
+import {environment} from '../../../../environments/environment';
 
 @Injectable()
 export class HTTPStatus {
     private requestInFlight: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-    constructor() { }
+    constructor() {
+    }
 
     setHttpStatus(inFlight: boolean) {
         this.requestInFlight.next(inFlight);
@@ -22,7 +23,8 @@ export class HTTPStatus {
 @Injectable()
 export class APIInterceptor implements HttpInterceptor {
 
-    constructor(private status: HTTPStatus) { }
+    constructor(private status: HTTPStatus) {
+    }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.status.setHttpStatus(true);

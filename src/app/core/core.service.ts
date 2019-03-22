@@ -17,7 +17,9 @@ export class CoreService {
                 this.reload();
 
                 let self = this;
-                setTimeout(function () {self.setLoader(false);}, 800);
+                setTimeout(function () {
+                    self.setLoader(false);
+                }, 800);
             }
         });
     }
