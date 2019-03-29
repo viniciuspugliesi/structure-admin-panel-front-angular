@@ -11,5 +11,4 @@ export class LayoutDefaultComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }

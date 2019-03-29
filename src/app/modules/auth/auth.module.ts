@@ -7,7 +7,7 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {RegisterComponent} from './register/register.component';
 import {UnverifiedComponent} from './unverified/unverified.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
-import {HelpersListComponent} from './login/components/helpers-list/helpers-list.component';
+import {HelpersListComponent} from './components/helpers-list/helpers-list.component';
 
 @NgModule({
     imports: [

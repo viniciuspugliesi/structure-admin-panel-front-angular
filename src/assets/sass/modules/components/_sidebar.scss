@@ -37,7 +37,12 @@
                 a {
                     .logo {
                         background-position: center center;
-                        width: $collapsed-size;
+
+                        img {
+                            width: 100%;
+                            max-width: 50px;
+                            margin: 10px;
+                        }
                     }
                 }
             }
@@ -140,7 +145,6 @@
             background-repeat: no-repeat;
             display: inline-block;
             min-height: calc(#{$header-height} - 1px);
-            width: 100%;
             width: 70px;
         }
 
@@ -415,6 +419,7 @@
                         .logo {
                             background-position: center left;
                             width: 150px;
+                            background: red;
                         }
                     }
                 }
