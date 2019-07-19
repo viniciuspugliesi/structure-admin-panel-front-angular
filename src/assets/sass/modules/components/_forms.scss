@@ -50,7 +50,8 @@
 }
 
 .checkbox input[type="checkbox"]:checked + label::after {
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     content: "\f00c";
     font-size: 13px;
 }
@@ -258,9 +259,12 @@
 .form-group-label {
     display: block;
     position: relative;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     border-bottom: 1px solid $md-dark-text-dividers;
+
+    &:has(.form-text) {
+        margin-bottom: 45px;
+    }
 
     label {
         transform-origin: bottom left;
@@ -268,13 +272,17 @@
         transition-property: color, bottom, transform;
         pointer-events: none;
         position: absolute;
-        top: 0;
+        top: 4px;
         width: 100%;
         font-size: 16px;
     }
 
     textarea {
         margin-top: 6px;
+    }
+
+    input[class="form-control"] {
+        height: calc(1.5em + 0.75rem);
     }
 
     .form-control {
@@ -314,7 +322,7 @@
             }
 
             & ~ label {
-                transform: scale(.75) translateY(-27px);
+                transform: scale(.75) translateY(-35px);
             }
         }
     }
@@ -346,6 +354,23 @@
 
         &.input-tooltip {
             cursor: help;
+        }
+    }
+
+    .form-text {
+        margin-top: 38px;
+    }
+
+    &.error {
+        border-bottom-color: $alert-danger--color;
+        margin-bottom: 45px;
+
+        label {
+            color: $alert-danger--color;
+        }
+
+        .form-text {
+            color: $alert-danger--color;
         }
     }
 }

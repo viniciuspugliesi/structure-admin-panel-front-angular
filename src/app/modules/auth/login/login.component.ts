@@ -1,20 +1,21 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../shared/domain/user';
+import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-    public user: User = new User();
 
-    constructor() {
+    constructor(private router: Router, private title: Title) {
     }
 
     ngOnInit() {
+        this.title.setTitle('Login - Administrator');
     }
 
-    sendLogin() {
-        console.log(this.user);
+    sendLoginForm() {
+        this.router.navigate(['/dashboard']).then();
     }
 }
