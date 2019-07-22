@@ -1,4 +1,4 @@
-<app-nav-right [width]="'400px'" (closed)="onCloseFilter()">
+<app-nav-right (closed)="onCloseFilter()" [width]="'400px'">
     <h3 class="drawer-heading">Filters</h3>
 
     <div class="drawer-section pos-r scrollable">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" (click)="submit()">Sign in</button>
+                <button (click)="submit()" class="btn btn-primary">Sign in</button>
             </form>
         </form>
     </div>

@@ -7,7 +7,7 @@ import {BasicTableComponent} from './basic-table/basic-table.component';
 import {DataTableComponent} from './data-table/data-table.component';
 import {DataTableService} from './data-table/data-table.service';
 import {AdvancedTableComponent} from './advanced-table/advanced-table.component';
-import { FiltersComponent } from './advanced-table/components/filters/filters.component';
+import {FiltersComponent} from './advanced-table/components/filters/filters.component';
 
 @NgModule({
     imports: [

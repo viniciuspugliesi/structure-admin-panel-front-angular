@@ -8,9 +8,10 @@ import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './layouts/components/footer/footer.component';
-import {LoaderComponent} from './layouts/components/loader/loader.component';
+import {FullLoaderComponent} from './layouts/components/loaders/full-loader/full-loader.component';
 import {NavComponent} from './layouts/components/nav/nav.component';
 import {HeaderComponent} from './layouts/components/header/header.component';
+import {LocalLoaderComponent} from './layouts/components/loaders/local-loader/local-loader.component';
 
 @NgModule({
     imports: [
@@ -25,9 +26,10 @@ import {HeaderComponent} from './layouts/components/header/header.component';
         LayoutDefaultComponent,
         LayoutCleanComponent,
         FooterComponent,
-        LoaderComponent,
+        FullLoaderComponent,
         NavComponent,
-        HeaderComponent
+        HeaderComponent,
+        LocalLoaderComponent
     ],
     providers: [
         CoreService,
