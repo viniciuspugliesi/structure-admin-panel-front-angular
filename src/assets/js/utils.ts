@@ -1,94 +1,104 @@
 declare let $: any;
 
-export default (function() {
+
+// ------------------------------------------------------
+// @Window load
+// ------------------------------------------------------
+
+$(window).on('load', () => {
+
     // ------------------------------------------------------
-    // @Window load
+    // @Popover
     // ------------------------------------------------------
 
-    $(window).on('load', function() {
-
-        // ------------------------------------------------------
-        // @Popover
-        // ------------------------------------------------------
-
-        // $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover();
 
 
-        // ------------------------------------------------------
-        // @Tooltips
-        // ------------------------------------------------------
+    // ------------------------------------------------------
+    // @Tooltips
+    // ------------------------------------------------------
 
-        // $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip();
 
 
-        // ------------------------------------------------------
-        // @Window Resize
-        // ------------------------------------------------------
+    // ------------------------------------------------------
+    // @Window Resize
+    // ------------------------------------------------------
 
+    /**
+     * NOTE: Register resize event for Masonry layout
+     */
+    let EVENT = document.createEvent('UIEvents');
+    // window.EVENT = EVENT;
+    EVENT.initUIEvent('resize', true, false, window, 0);
+
+
+    window.addEventListener('load', () => {
         /**
-         * NOTE: Register resize event for Masonry layout
+         * Trigger window resize event after page load
+         * for recalculation of masonry layout.
          */
-        // let EVENT = document.createEvent('UIEvents');
-        // window.EVENT = EVENT;
-        // EVENT.initUIEvent('resize', true, false, window, 0);
-        //
-        //
-        // window.addEventListener('load', () => {
-        //     /**
-        //      * Trigger window resize event after page load
-        //      * for recalculation of masonry layout.
-        //      */
-        //     window.dispatchEvent(EVENT);
-        // });
-
-
-        // ------------------------------------------------------
-        // @Resize Trigger
-        // ------------------------------------------------------
-
-        // Trigger resize on any element click
-        // document.addEventListener('click', () => {
-        //     window.dispatchEvent(window.EVENT);
-        // });
-
-        // ------------------------------------------------------
-        // @Form group label
-        // ------------------------------------------------------
-
-        $(document).on('change', '.form-group-label .form-control', function() {
-            if ($(this).val() && ! $(this).hasClass('has-value')) {
-                $(this).addClass('has-value');
-            } else if (!$(this).val()) {
-                $(this).removeClass('has-value');
-            }
-        });
-
-        $('.form-group-label .form-control').each((index, el) => {
-            if ($(el).val()) {
-                $(el).addClass('has-value');
-            } else {
-                $(el).removeClass('has-value');
-            }
-        });
-
-
-        // ------------------------------------------------------
-        // @Form input password
-        // ------------------------------------------------------
-
-        $(document).on('click', '.input-password', function() {
-            let i = $(this).find('i');
-            let input = $(this).parent().parent().parent().find('input');
-
-            if (i.hasClass('fa-eye-slash')) {
-                i.removeClass('fa-eye-slash').addClass('fa-eye');
-                input.attr('type', 'text');
-            } else {
-                i.removeClass('fa-eye').addClass('fa-eye-slash');
-                input.attr('type', 'password');
-            }
-
-            setTimeout(() => { input.focus(); }, 100);
-        });
+        window.dispatchEvent(EVENT);
     });
-}());
+
+
+    // ------------------------------------------------------
+    // @Resize Trigger
+    // ------------------------------------------------------
+
+    // Trigger resize on any element click
+    document.addEventListener('click', () => {
+        window.dispatchEvent(EVENT);
+    });
+
+    // ------------------------------------------------------
+    // @Form group label
+    // ------------------------------------------------------
+
+    $(document).on('change', '.form-group-label .form-control', function() {
+        if ($(this).val() && !$(this).hasClass('has-value')) {
+            $(this).addClass('has-value');
+        } else if (!$(this).val()) {
+            $(this).removeClass('has-value');
+        }
+    });
+
+    $('.form-group-label .form-control').each((index, el) => {
+        if ($(el).val()) {
+            $(el).addClass('has-value');
+        } else {
+            $(el).removeClass('has-value');
+        }
+    });
+
+
+    // ------------------------------------------------------
+    // @Form input password
+    // ------------------------------------------------------
+
+    $(document).on('click', '.input-password', function() {
+        let i = $(this).find('i');
+        let input = $(this).parent().parent().parent().find('input');
+
+        if (i.hasClass('fa-eye-slash')) {
+            i.removeClass('fa-eye-slash').addClass('fa-eye');
+            input.attr('type', 'text');
+        } else {
+            i.removeClass('fa-eye').addClass('fa-eye-slash');
+            input.attr('type', 'password');
+        }
+
+        setTimeout(() => {
+            input.focus();
+        }, 100);
+    });
+
+
+    // ------------------------------------------------------
+    // @Nav right
+    // ------------------------------------------------------
+
+    $(document).on('click', '.mobile-toggle-nav', function() {
+        $(this).toggleClass('is-active');
+    });
+});

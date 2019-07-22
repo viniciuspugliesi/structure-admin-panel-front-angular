@@ -7,19 +7,19 @@ export class ChartService {
     constructor(private http: HttpClient) {
     }
 
-    getDataLineChart() {
+    getDataLineChart(): any {
         return this.http.get('./assets/data/chart/line-chart.json');
     }
 
-    getDataScatterChart() {
+    getDataScatterChart(): any {
         return this.http.get('./assets/data/chart/scatter-chart.json');
     }
 
-    getDataBarChart() {
+    getDataBarChart(): any {
         return this.http.get('./assets/data/chart/bar-chart.json');
     }
 
-    getDataStackedChart() {
+    getDataStackedChart(): any {
         return this.http.get('./assets/data/chart/stacked-chart.json');
     }
 }

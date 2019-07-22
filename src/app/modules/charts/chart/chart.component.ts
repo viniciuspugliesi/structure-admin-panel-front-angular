@@ -23,9 +23,9 @@ export class ChartComponent implements OnInit {
 
     initLineChart() {
         this.chartService.getDataLineChart().subscribe(data => {
-            new Chart($('#line-chart'), {
+            return new Chart($('#line-chart'), {
                 type: 'line',
-                data: data,
+                data,
                 options: {
                     scales: {
                         yAxes: [{
@@ -39,9 +39,9 @@ export class ChartComponent implements OnInit {
 
     initScatterChart() {
         this.chartService.getDataScatterChart().subscribe(data => {
-            new Chart($('#scatter-chart'), {
+            return new Chart($('#scatter-chart'), {
                 type: 'scatter',
-                data: data,
+                data,
                 options: {
                     scales: {
                         xAxes: [{
@@ -56,9 +56,9 @@ export class ChartComponent implements OnInit {
 
     initBarChart() {
         this.chartService.getDataBarChart().subscribe(data => {
-            new Chart($('#bar-chart'), {
+            return new Chart($('#bar-chart'), {
                 type: 'bar',
-                data: data,
+                data,
                 options: {
                     scales: {
                         yAxes: [{

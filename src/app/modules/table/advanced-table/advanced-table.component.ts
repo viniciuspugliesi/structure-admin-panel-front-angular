@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NavRightService} from '../../../shared/components/nav-right/nav-right.service';
 
 @Component({
     selector: 'app-advanced-table',
@@ -6,10 +7,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdvancedTableComponent implements OnInit {
 
-    constructor() {
+    constructor(private navRightService: NavRightService) {
     }
 
     ngOnInit() {
     }
 
+    openFilters() {
+        this.navRightService.open();
+    }
 }

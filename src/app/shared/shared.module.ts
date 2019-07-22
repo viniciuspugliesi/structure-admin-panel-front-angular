@@ -15,6 +15,7 @@ import {DateTimeHelper} from './helpers/date-time-helper';
 import {MoneyHelper} from './helpers/money-helper';
 import {RedirectIfAuthenticatedGuard} from './guards/redirect-if-authenticated/redirect-if-authenticated.guard';
 import {RedirectIfNotAuthenticatedGuard} from './guards/redirect-if-not-authenticated/redirect-if-not-authenticated.guard';
+import {NavRightComponent} from './components/nav-right/nav-right.component';
 
 @NgModule({
     imports: [
@@ -29,6 +30,7 @@ import {RedirectIfNotAuthenticatedGuard} from './guards/redirect-if-not-authenti
         NumberToHourPipe,
         PreventDefaultDirective,
         NumberDirective,
+        NavRightComponent,
     ],
     exports: [
         PricePipe,
@@ -38,6 +40,7 @@ import {RedirectIfNotAuthenticatedGuard} from './guards/redirect-if-not-authenti
         NumberToHourPipe,
         PreventDefaultDirective,
         NumberDirective,
+        NavRightComponent,
     ],
     providers: [
         HTTPStatus,
