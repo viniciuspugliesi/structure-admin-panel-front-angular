@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {GoogleMapsComponent} from './modules/google-maps/google-maps.component';
 import {FormsComponent} from './modules/forms/forms.component';
 import {UiElementsComponent} from './modules/ui-elements/ui-elements.component';
 import {PageBlankComponent} from './modules/page-blank/page-blank.component';
@@ -18,7 +17,6 @@ import {CoreModule} from './core/core.module';
         PageBlankComponent,
         UiElementsComponent,
         FormsComponent,
-        GoogleMapsComponent,
     ],
     imports: [
         FormsModule,

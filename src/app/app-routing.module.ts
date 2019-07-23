@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {GoogleMapsComponent} from './modules/google-maps/google-maps.component';
 import {FormsComponent} from './modules/forms/forms.component';
 import {UiElementsComponent} from './modules/ui-elements/ui-elements.component';
 import {PageBlankComponent} from './modules/page-blank/page-blank.component';
@@ -25,7 +24,8 @@ const routes: Routes = [
             {path: 'charts', loadChildren: './modules/charts/charts.module#ChartsModule'},
             {path: 'chat', loadChildren: './modules/chat/chat.module#ChatModule'},
             {path: 'calendar', loadChildren: './modules/calendar/calendar.module#CalendarModule'},
-            {path: 'maps/google-maps', component: GoogleMapsComponent},
+            {path: 'maps', loadChildren: './modules/maps/maps.module#MapsModule'},
+            {path: 'profile', loadChildren: './modules/profile/profile.module#ProfileModule'},
             {path: 'forms', component: FormsComponent},
             {path: 'ui-elements', component: UiElementsComponent},
             {path: 'page-blank', component: PageBlankComponent},

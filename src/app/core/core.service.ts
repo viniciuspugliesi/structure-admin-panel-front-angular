@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ActivationEnd, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import PerfectScrollbar from 'perfect-scrollbar';
-import Masonry from 'masonry-layout';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 declare let $: any;
@@ -22,6 +21,7 @@ export class CoreService {
                 let self = this;
                 setTimeout(function() {
                     self.setLoader(false);
+                    $('body')[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 600);
             }
         });
@@ -33,7 +33,6 @@ export class CoreService {
         this.reloadInputPassword();
         this.reloadPopover();
         this.reloadTooltip();
-        this.reloadMasonry();
         this.reloadDatepicker();
     }
 
@@ -57,8 +56,28 @@ export class CoreService {
 
     reloadPerfectScroll(): void {
         $('.scrollable').each((index, el) => {
-            new PerfectScrollbar(el, {
-                wheelPropagation: false
+            return new PerfectScrollbar(el, {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20
+            });
+        });
+
+        $('.scrollable-y').each((index, el) => {
+            return new PerfectScrollbar(el, {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20,
+                suppressScrollX: true
+            });
+        });
+
+        $('.scrollable-x').each((index, el) => {
+            return new PerfectScrollbar(el, {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20,
+                suppressScrollY: true
             });
         });
     }
@@ -98,16 +117,6 @@ export class CoreService {
                 input.focus();
             }, 100);
         });
-    }
-
-    reloadMasonry() {
-        if ($('.masonry').length > 0) {
-            new Masonry('.masonry', {
-                itemSelector: '.masonry-item',
-                columnWidth: '.masonry-sizer',
-                percentPosition: true,
-            });
-        }
     }
 
     reloadDatepicker() {

@@ -1,16 +1,15 @@
-<div class="app">
+<div class="app is-collapsed">
     <app-nav></app-nav>
+
+    <app-local-loader></app-local-loader>
 
     <div class="page-container">
         <app-header></app-header>
 
-        <app-local-loader></app-local-loader>
-
-        <main class='main-content bgc-grey-100'>
+        <main class="main-content bgc-grey-200">
             <router-outlet></router-outlet>
         </main>
 
         <app-footer></app-footer>
     </div>
 </div>
-

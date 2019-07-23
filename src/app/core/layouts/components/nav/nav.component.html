@@ -1,4 +1,4 @@
-<div class="sidebar">
+<nav class="sidebar">
     <div class="sidebar-inner">
         <!-- ### $Sidebar Header ### -->
         <div class="sidebar-logo">
@@ -31,7 +31,7 @@
         <!-- ### $Sidebar Menu ### -->
         <ul class="sidebar-menu scrollable pos-r">
             <li class="nav-item mT-10">
-                <a class="sidebar-link" routerLink="/dashboard">
+                <a class="sidebar-link" routerLink="/dashboard" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-blue-500 fa fa-home"></i>
                     </span>
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/emails">
+                <a class='sidebar-link' routerLink="/emails" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <span class="icon-holder">
                         <i class="c-brown-500 fa fa-envelope"></i>
                     </span>
@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/emails/compose">
+                <a class='sidebar-link' routerLink="/emails/compose" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-blue-500 fa fa-share-square"></i>
                     </span>
@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/calendar">
+                <a class='sidebar-link' routerLink="/calendar" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-deep-orange-500 fa fa-calendar-alt"></i>
                     </span>
@@ -63,7 +63,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/chat">
+                <a class='sidebar-link' routerLink="/chat" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-deep-purple-500 fa fa-comments"></i>
                     </span>
@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/charts">
+                <a class='sidebar-link' routerLink="/charts" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-indigo-500 fa fa-chart-bar"></i>
                     </span>
@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class='sidebar-link' routerLink="/forms">
+                <a class='sidebar-link' routerLink="/forms" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-light-blue-500 fa fa-pencil-alt"></i>
                     </span>
@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="sidebar-link" routerLink="/ui-elements">
+                <a class="sidebar-link" routerLink="/ui-elements" routerLinkActive="active">
                     <span class="icon-holder">
                         <i class="c-pink-500 fas fa-palette"></i>
                     </span>
@@ -101,18 +101,24 @@
                     </span>
                     <span class="title">Tables</span>
                     <span class="arrow">
-                        <i class="fa fa-angle-right fa-2x"></i>
+                        <i class="fa fa-angle-right fa-lg"></i>
                     </span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-vertical-line">
                     <li>
-                        <a class='sidebar-link' routerLink="/tables/basic-tables">Basic Table</a>
+                        <a class='sidebar-link' routerLink="/tables/basic-tables" routerLinkActive="active">
+                            Basic Table
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/tables/advanced-tables">Advanced Table</a>
+                        <a class='sidebar-link' routerLink="/tables/advanced-tables" routerLinkActive="active">
+                            Advanced Table
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/tables/data-tables">Data Table</a>
+                        <a class='sidebar-link' routerLink="/tables/data-tables" routerLinkActive="active">
+                            Data Table
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -123,12 +129,14 @@
                     </span>
                     <span class="title">Maps</span>
                     <span class="arrow">
-                        <i class="fa fa-angle-right fa-2x"></i>
+                        <i class="fa fa-angle-right fa-lg"></i>
                     </span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-vertical-line">
                     <li>
-                        <a routerLink="/maps/google-maps">Google Map</a>
+                        <a class='sidebar-link' routerLink="/maps/google-maps" routerLinkActive="active">
+                            Google Map
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -139,36 +147,54 @@
                     </span>
                     <span class="title">Pages</span>
                     <span class="arrow">
-                        <i class="fa fa-angle-right fa-2x"></i>
+                        <i class="fa fa-angle-right fa-lg"></i>
                     </span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-vertical-line">
                     <li>
-                        <a class='sidebar-link' routerLink="/page-blank">Blank</a>
+                        <a class='sidebar-link' routerLink="/page-blank" routerLinkActive="active">
+                            Blank
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/error/401">401</a>
+                        <a class='sidebar-link' routerLink="/error/401" routerLinkActive="active">
+                            401
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/error/403">403</a>
+                        <a class='sidebar-link' routerLink="/error/403" routerLinkActive="active">
+                            403
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/error/404">404</a>
+                        <a class='sidebar-link' routerLink="/error/404" routerLinkActive="active">
+                            404
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/error/500">500</a>
+                        <a class='sidebar-link' routerLink="/error/500" routerLinkActive="active">
+                            500
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/login">Sign In</a>
+                        <a class='sidebar-link' routerLink="/login" routerLinkActive="active">
+                            Sign In
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/create-account">Sign Up</a>
+                        <a class='sidebar-link' routerLink="/create-account" routerLinkActive="active">
+                            Sign Up
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/forgot-password">Forgot Password</a>
+                        <a class='sidebar-link' routerLink="/forgot-password" routerLinkActive="active">
+                            Forgot Password
+                        </a>
                     </li>
                     <li>
-                        <a class='sidebar-link' routerLink="/reset-password">Reset Password</a>
+                        <a class='sidebar-link' routerLink="/reset-password" routerLinkActive="active">
+                            Reset Password
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -179,10 +205,10 @@
                     </span>
                     <span class="title">Multiple Levels</span>
                     <span class="arrow">
-                        <i class="fa fa-angle-right fa-2x"></i>
+                        <i class="fa fa-angle-right fa-lg"></i>
                     </span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-vertical-line">
                     <li class="nav-item dropdown">
                         <a href="#" prevent-default>
                             <span>Menu Item</span>
@@ -192,7 +218,7 @@
                         <a href="#" prevent-default>
                             <span>Menu Item</span>
                             <span class="arrow">
-                                <i class="fa fa-angle-right fa-2x"></i>
+                                <i class="fa fa-angle-right fa-lg"></i>
                             </span>
                         </a>
                         <ul class="dropdown-menu">
@@ -203,7 +229,7 @@
                                 <a href="#" prevent-default>
                                     <span>Menu Item</span>
                                     <span class="arrow">
-                                <i class="fa fa-angle-right fa-2x"></i>
+                                <i class="fa fa-angle-right fa-lg"></i>
                             </span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -221,4 +247,4 @@
             </li>
         </ul>
     </div>
-</div>
+</nav>

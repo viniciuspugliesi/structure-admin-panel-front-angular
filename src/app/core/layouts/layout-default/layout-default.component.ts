@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CoreService} from '../../core.service';
 
 @Component({
     selector: 'app-layout-default',
@@ -6,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LayoutDefaultComponent implements OnInit {
 
-    constructor() {
+    constructor(public coreService: CoreService) {
     }
 
     ngOnInit() {

@@ -22,36 +22,6 @@ $(window).on('load', () => {
 
 
     // ------------------------------------------------------
-    // @Window Resize
-    // ------------------------------------------------------
-
-    /**
-     * NOTE: Register resize event for Masonry layout
-     */
-    let EVENT = document.createEvent('UIEvents');
-    // window.EVENT = EVENT;
-    EVENT.initUIEvent('resize', true, false, window, 0);
-
-
-    window.addEventListener('load', () => {
-        /**
-         * Trigger window resize event after page load
-         * for recalculation of masonry layout.
-         */
-        window.dispatchEvent(EVENT);
-    });
-
-
-    // ------------------------------------------------------
-    // @Resize Trigger
-    // ------------------------------------------------------
-
-    // Trigger resize on any element click
-    document.addEventListener('click', () => {
-        window.dispatchEvent(EVENT);
-    });
-
-    // ------------------------------------------------------
     // @Form group label
     // ------------------------------------------------------
 
@@ -95,8 +65,14 @@ $(window).on('load', () => {
 
 
     // ------------------------------------------------------
-    // @Nav right
+    // @Nav
     // ------------------------------------------------------
+
+    let parentRoute = $('nav.sidebar .sidebar-menu a.active').parent().parent();
+
+    if (parentRoute.is('ul.dropdown-menu')) {
+        parentRoute.parent().addClass('open');
+    }
 
     $(document).on('click', '.mobile-toggle-nav', function() {
         $(this).toggleClass('is-active');
